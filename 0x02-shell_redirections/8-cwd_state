@@ -1,0 +1,2 @@
+#!/bin/bash
+cp 8-cwd_state ls_cwd_content | ls -la > ls_cwd_content

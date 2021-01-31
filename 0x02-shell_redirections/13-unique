@@ -1,2 +1,2 @@
 #!/bin/bash
-
+grep -E 'C|C\+\+|Go' test1 | tr -d '#' | sort -u

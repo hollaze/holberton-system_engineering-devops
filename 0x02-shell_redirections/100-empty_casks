@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -type d -path "*/*" -printf '%f\n' | ls -1
+find . -empty -printf '%f\n' | ls -1

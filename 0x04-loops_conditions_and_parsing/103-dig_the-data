@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Parsing apache logs
+#occurence number, ip, http_code
+
+awk '{print $1" "$9}' apache-access.log | sort | uniq -c | sort -rn

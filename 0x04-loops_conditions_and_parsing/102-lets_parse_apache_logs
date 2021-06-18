@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 #Parsing apache logs
 
-file="apache-access.log"
-cat $file | awk '{print $1" "$9}'
+< apache-access.log awk '{print $1" "$9}'

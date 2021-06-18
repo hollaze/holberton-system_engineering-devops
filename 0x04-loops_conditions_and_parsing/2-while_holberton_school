@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Print ten times Holberton School -> While loop
 x=1
 while [ $x -le 10 ]
 do

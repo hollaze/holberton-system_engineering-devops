@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Prints 10 times Holberton School -> for loop
 for (( c=1; c<=10; c++ ))
 do
     echo "Holberton School"

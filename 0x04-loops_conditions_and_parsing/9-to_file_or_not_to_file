@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Check multiples things on a file
 file="holbertonschool"
 
 if [ -e $file ]

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #print all files in current directory
-for f in *
+cmd=$(ls)
+
+for f in $cmd
 do
-    echo $f
+    echo "$f" | cut -f 2 -d '-'
 done

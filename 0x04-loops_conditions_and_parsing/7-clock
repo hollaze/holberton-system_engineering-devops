@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+hour=0
+min=1
+
+echo "Hour: $hour"
+
+while [[ $hour -le 12 && $min -le 59 ]]
+do
+    echo $min
+    if [ $min -eq 59 ]
+    then
+        if [ $hour != 12 ]
+        then
+            (( hour++ ))
+            echo "Hour: $hour"
+            min=0
+        fi
+    fi
+    (( min++ ))
+done

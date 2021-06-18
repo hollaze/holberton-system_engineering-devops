@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Displays content of a file -> only:
+#username, user id, home directory path for the user
+
+file="/etc/passwd"
+while IFS=: read -r username password userid groupid homedir comment homedir cmdshell
+do
+    echo "$username:$userid:$homedir" 
+done < $file

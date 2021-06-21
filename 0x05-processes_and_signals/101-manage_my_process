@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#start stop and restart manage_my_process
+
+case $1 in
+
+    start)
+        ./manage_my_process
+        sudo sh -c 'echo $$ > /var/run/my_process.pid'
+        echo "manage_my_process started"
+        ;;
+    stop)
+        pkill -SIGTERM -f "manage_my_process"
+        sudo rm /var/run/my_process.pid
+        echo "manage_my_process stopped"
+        ;;
+    restart)
+        pkill -SIGTERM -f "manage_my_process"
+        sudo rm /var/run/my_process.pid
+        ./manage_my_process
+        sudo sh -c 'echo $$ > /var/run/my_process.pid'
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
+
+esac

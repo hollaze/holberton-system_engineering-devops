@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Process to manage
+
+while :
+do
+    sudo sh -c "I am alive!" >> /tmp/my_process
+    sleep 2
+done

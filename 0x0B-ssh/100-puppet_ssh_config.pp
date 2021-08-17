@@ -4,7 +4,7 @@
 file_line { 'Refuse authentificate password':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => '    PasswordAuthentification no',
+  line   => '    PasswordAuthentication no',
 }
 
 file_line { 'Using private key':

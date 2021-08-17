@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 #Create an ssh key pair
-ssh-keygen -b 4096 -f holberton -P betty
+#Number of bits of the created key: 4096
+#Name of the created private key: holberton
+#Passphrase: betty
+
+ssh-keygen -b 4096 -f holberton -N betty
+

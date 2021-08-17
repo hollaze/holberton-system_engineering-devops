@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Fixing the server
+cp /etc/passwd /tmp/
+echo OK > /tmp/isworking

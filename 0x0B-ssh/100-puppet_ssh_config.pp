@@ -1,7 +1,7 @@
 #Setting up the client SSH configuration file,
 #to connect to a server without typing a password
 
-file_line { 'Refuse authentificate password':
+file_line { 'Refuse authenticate password':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
   line   => '    PasswordAuthentication no',

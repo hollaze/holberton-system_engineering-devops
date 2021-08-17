@@ -1,5 +1,4 @@
-#Setting up the client SSH configuration file,
-#to connect to a server without typing a password
+#Setting up the client SSH configuration file
 
 file_line { 'Turn off passwd auth':
   ensure => present,

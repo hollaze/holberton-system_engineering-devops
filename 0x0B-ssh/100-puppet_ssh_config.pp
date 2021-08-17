@@ -8,7 +8,7 @@ file_line { 'Refuse authenticate password':
 }
 
 file_line { 'Using private key':
-  ensure => present,,
+  ensure => present,
   path   => '/etc/ssh/ssh_config',
   line   => '    IdentifyFile ~/.ssh/holberton',
 }

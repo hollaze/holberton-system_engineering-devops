@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#transfer file
+#transfer file from clien to server
 case $# in
     4)
     scp -o StrictHostKeyChecking=no -i "$4" "$3"@"$2" "$1":~/

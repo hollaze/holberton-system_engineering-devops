@@ -17,7 +17,7 @@ file { 'index.html':
 }
 
 exec { 'add X-Served-By':
-  command => '"/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default',
+  command => 'sed -i "/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default',
   user    => 'root',
 }
 

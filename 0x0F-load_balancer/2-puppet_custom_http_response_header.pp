@@ -9,12 +9,6 @@ package { 'nginx':
   require => Exec['apt-get-update'],
 }
 
-file { 'index.html':
-  ensure  => 'present',
-  path    => '/var/www/html/index.html',
-  content => 'Holberton School for the win!',
-}
-
 exec { 'add X-Served-By':
   command => 'sed -i "/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default',
 }

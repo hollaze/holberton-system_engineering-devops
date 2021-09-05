@@ -3,10 +3,9 @@
 
 sudo apt-get update && sudo apt-get install haproxy -y
 sudo echo "frontend my_front
-        bind: *:80
+        bind *:80
         mode http
         default_backend my_back
-
 backend my_back
         balance roundrobin
         server 2794-web-01 34.138.93.148:80 check

@@ -2,7 +2,6 @@
 
 exec { 'update':
   command => '/usr/bin/apt-get update',
-  user    => 'root',
 }
 
 package { 'nginx':
@@ -18,10 +17,8 @@ file { 'index.html':
 
 exec { 'add X-Served-By':
   command => 'sed -i "/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default',
-  user    => 'root',
 }
 
 exec { 'restart nginx':
   command => 'service nginx restart',
-  user    => 'root',
 }

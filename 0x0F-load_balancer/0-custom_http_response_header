@@ -2,6 +2,7 @@
 #Double the number of web servers
 
 sudo apt-get update && sudo apt-get install nginx -y
+sudo ufw allow "Nginx HTTP"
 echo "Holberton School for the win!" | sudo tee /var/www/html/index.nginx-debian.html
 sudo sed -i "/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx restart

@@ -13,9 +13,6 @@ package { 'nginx':
 file { 'index.html':
   ensure  => 'present',
   path    => '/var/www/html/index.html',
-  mode    => '0644',
-  owner   => 'root',
-  group   => 'root',
   content => 'Holberton School for the win!',
 }
 

@@ -3,7 +3,7 @@ exec { 'update':
   command => '/usr/bin/apt-get update',
 }
 
-package { 'update nginx':
+package { 'nginx':
   ensure  => 'installed',
   name    => 'nginx',
   require => Exec['apt-get-update'],
@@ -23,7 +23,7 @@ file { 'index.nginx-debian.html':
   content => 'Holberton School for the win!',
 }
 
-service { 'verify nginx is running':
+service { 'nginx':
   ensure  => running,
   require => Package['nginx'],
 }

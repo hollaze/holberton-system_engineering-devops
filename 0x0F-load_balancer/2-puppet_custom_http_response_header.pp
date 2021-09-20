@@ -17,10 +17,10 @@ file_line { 'listen port 80 & add X-Served-By header':
   require => Package['nginx'],
 }
 
-file { 'index.nginx-debian.html':
-  ensure => 'present',
-  path => '/var/www/html/index.nginx-debian.html',
-  content => 'Holberton School for the win!',
+exec { 'add line':
+  ensure  => 'present',
+  user    => 'root',
+  command => 'sudo echo "Holberton School for the win!" | sudo tee /var/www/html/index.nginx-debian.html',
 }
 
 service { 'nginx':

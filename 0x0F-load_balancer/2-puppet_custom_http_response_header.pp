@@ -4,20 +4,21 @@ exec { 'update':
   command => '/usr/bin/apt-get update',
 }
 
-package { 'nginx':
+package { 'update nginx':
   ensure  => 'installed',
   name    => 'nginx',
   require => Exec['apt-get-update'],
 }
 
-exec { 'add X-Served-By':
-  command => '"/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default',
+file_line { 'listen port 80 & add X-Served-By header':
+  ensure  => 'present',
+  path    => '/etc/nginx/sites-available/default',
+  after   => 'listen 80 default_server;',
+  line    => 'add_header X-Served-By $hostname;',
+  require => Package['nginx'],
 }
 
-exec { 'listen port 80':
-  command => 'Listen 80 default_server;',
-}
-
-exec { 'restart nginx':
-  command => 'service nginx restart',
+service { 'verify nginx is running':
+  ensure  => running,
+  require => Package['nginx'],
 }

@@ -9,6 +9,10 @@ package { 'nginx':
   require => Exec['apt-get-update'],
 }
 
+exec { 'allow nginx http':
+  command => 'sudo ufw allow "Nginx HTTP"',
+  }
+
 file_line { 'listen port 80 & add X-Served-By header':
   ensure  => 'present',
   path    => '/etc/nginx/sites-available/default',

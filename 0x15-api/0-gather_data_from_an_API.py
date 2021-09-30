@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """ get tasks done from chosen employee id """
+
 import requests
-from sys import argv
+import sys
 
 
 url_todos = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
-    argv[1])
+    sys.argv[1])
 employee_name = requests.get('https://jsonplaceholder.typicode.com/users/{}'
-                             .format(argv[1])).json()['name']
+                             .format(sys.argv[1])).json()['name']
 
 r_todos = requests.get(url_todos)
 

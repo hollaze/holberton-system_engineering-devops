@@ -22,7 +22,7 @@ if __name__ == "__main__":
             tasks_titles.append(task['title'])
             count_done_tasks += 1
 
-    print("Employee {:s} is done with task({:d}/{:d}):".format(
+    print("Employee {:s} is done with tasks({:d}/{:d}):".format(
         name, count_done_tasks, count_total_tasks))
 
     for title in tasks_titles:

@@ -18,12 +18,13 @@ if __name__ == "__main__":
 
     for task in r_todos.json():
         count_total_tasks += 1
+        tasks_titles.append(task['title'])
         if task['completed']:
-            tasks_titles.append(task['title'])
             count_done_tasks += 1
 
     print("Employee {:s} is done with tasks({:d}/{:d}):".format(
         name, count_done_tasks, count_total_tasks))
 
-    for title in tasks_titles:
-        print("\t{}".format(title))
+    for task in r_todos.json():
+        if task['completed']:
+            print("\t{}".format(task['title']))

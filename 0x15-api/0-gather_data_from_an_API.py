@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """ get tasks done from chosen employee id """
-import requests
-import sys
 
 if __name__ == "__main__":
+    import requests
+    import sys
+
     url_todos = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
         sys.argv[1])
     name = requests.get('https://jsonplaceholder.typicode.com/users/{}'

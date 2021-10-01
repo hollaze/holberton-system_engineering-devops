@@ -7,7 +7,7 @@ import sys
 
 if __name__ == "__main__":
     todos = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
-                         .format(sys.argv[1]))
+                         .format(sys.argv[1])).json()
     username = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                             .format(sys.argv[1])).json()['username']
 
@@ -15,4 +15,4 @@ if __name__ == "__main__":
         write = csv.writer(file_name, quoting=csv.QUOTE_ALL)
         [write.writerow(
             [sys.argv[1], username, task['completed'], task['title']]
-        ) for task in todos.json()]
+        ) for task in todos]

@@ -10,9 +10,9 @@ if __name__ == "__main__":
         "https://jsonplaceholder.typicode.com/users/").json()
 
     dict = {user['id']: [{
+        "username": user['username'],
         "task": task['title'],
-        "completed": task['completed'],
-        "username": user['username']} for task in todos] for user in users}
+        "completed": task['completed']} for task in todos] for user in users}
 
     with open("todo_all_employees.json", 'w') as file:
         json.dump(dict, file)
